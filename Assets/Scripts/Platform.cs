@@ -23,16 +23,15 @@ public class Platform : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //karakter platforma çarptýðý zaman güç uygulayacak
+    private void OnCollisionEnter2D(Collision2D collision) //karakter platforma ï¿½arptï¿½ï¿½ï¿½ zaman gï¿½ï¿½ uygulayacak
     {
-        if (collision.gameObject.CompareTag("Karakter")
+        if (collision.gameObject.CompareTag("Karakter"))
         {
             if(collision.relativeVelocity.y <= 0f) 
             {
-            
+                collision.gameObject.GetComponent<Karakter>().KarakteriZiplat();
             }
-            collision.gameObject.GetComponent<Karakter>().KarakteriZiplat();
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }

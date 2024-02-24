@@ -135,9 +135,10 @@ GameObject:
   - component: {fileID: 62135210}
   - component: {fileID: 62135209}
   - component: {fileID: 62135208}
+  - component: {fileID: 62135212}
   m_Layer: 0
   m_Name: Doodler
-  m_TagString: Untagged
+  m_TagString: Karakter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,6 +272,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &62135212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62135207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba0b5f9979cf4ac9b8fd669dfc471dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hareketHizi: 5
+  ziplamaKuvveti: 300
 --- !u!1 &322999510
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +380,8 @@ GameObject:
   m_Component:
   - component: {fileID: 868712201}
   - component: {fileID: 868712200}
-  - component: {fileID: 868712202}
+  - component: {fileID: 868712203}
+  - component: {fileID: 868712204}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -434,13 +450,25 @@ Transform:
   m_GameObject: {fileID: 868712199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20656137, y: -3.7424061, z: 0}
+  m_LocalPosition: {x: 0.20656137, y: -3.816, z: 0}
   m_LocalScale: {x: 0.37, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &868712202
+--- !u!114 &868712203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868712199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5228a8fa689c86b4baa0345db123c053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!68 &868712204
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,7 +504,6 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -3.1999998, y: 0}
-  - {x: -0.07173136, y: -0.01624012}
   - {x: 3.1999998, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
