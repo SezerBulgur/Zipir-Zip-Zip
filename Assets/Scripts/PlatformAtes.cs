@@ -16,18 +16,12 @@ public class PlatformAtes : Platform
 
     }
 
-    void OnCollisionExit(Collision col)
+    void OnCollisionExit2D(Collision2D col)
     {
         // Nesnenin baþka bir nesneye çarpmayý býraktýðý durumu izler
         if (col.gameObject.CompareTag("Karakter"))
         {
             // "Karakter" etiketine sahip bir objeye çarpmayý býraktýðýnda çalýþýr
-
-            Destroy(gameObject);
-        }
-        if (col.gameObject.name == "Karakter")
-        {
-            // Ýsmi "Karakter" olan bir objeye çarpmayý býraktýðýnda çalýþýr
 
             Destroy(gameObject);
         }

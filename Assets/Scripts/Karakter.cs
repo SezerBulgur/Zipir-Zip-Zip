@@ -20,6 +20,7 @@ public class Karakter : MonoBehaviour
     {
         float yatayEksen = Input.GetAxis("Horizontal");
         gameObject.transform.Translate(yatayEksen * hareketHizi * Time.deltaTime, 0, 0);
+        Debug.Log(yatayEksen);
 
     }
 

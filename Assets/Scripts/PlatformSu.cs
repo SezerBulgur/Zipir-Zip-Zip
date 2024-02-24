@@ -30,7 +30,7 @@ public class PlatformSu : Platform
             collision.gameObject.GetComponent<Rigidbody2D>().velocity *= slowdownFactor;
 
             // Platformun suya carptigini gosteren bir ses efekti calabilirsiniz:
-            AudioSource.PlayClipAtPoint(splashSound, transform.position);
+            //AudioSource.PlayClipAtPoint(splashSound, transform.position);
         }
     }
 }
