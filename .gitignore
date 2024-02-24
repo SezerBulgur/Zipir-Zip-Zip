@@ -7,7 +7,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-Assets/Sprites
+.vsconfig
 
 # User-specific files
 *.rsuser
