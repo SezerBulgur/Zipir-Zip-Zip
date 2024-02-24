@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ZipirZipZip.sln"
+    "dotnet.defaultSolution": "Zipir-Zip-Zip.sln"
 }
