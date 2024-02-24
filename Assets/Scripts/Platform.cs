@@ -23,7 +23,7 @@ public class Platform : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //karakter platforma �arpt��� zaman g�� uygulayacak
+    private void OnCollisionEnter2D(Collision2D collision) //karakter platforma carptigi zaman guc uygulayacak
     {
         if (collision.gameObject.CompareTag("Karakter"))
         {
