@@ -90,4 +90,19 @@ public class PlatformPool : MonoBehaviour
 
         return null;
     }
+
+    public GameObject GetObjectFromLavaPlatformPool()
+    {
+        for (int i = 0; i < pooledLavaPlatforms.Count; i++)
+        {
+            //buradan cagirilan platform, platform nesnesi icinde spawn tarzi bir metodun icinde kullanilmali
+            if (!pooledLavaPlatforms[i].activeInHierarchy) 
+            {   
+                return pooledLavaPlatforms[i];
+            }
+            
+        }
+
+        return null;
+    }
 }

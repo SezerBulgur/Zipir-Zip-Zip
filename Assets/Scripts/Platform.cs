@@ -17,7 +17,6 @@ public class Platform : MonoBehaviour
     [SerializeField] float platformMaxY = 2f;
     [SerializeField] float platformMinY = 1.6f;
     [SerializeField] Transform playerTransform;
-    [SerializeField] private GameObject suPlatformPrefab;
 
 //BU KODU YAZINCA UNITY PROJEYI ACAMIYOR
     //PlatformSu platformSu = new PlatformSu();
@@ -56,13 +55,22 @@ public class Platform : MonoBehaviour
             }
         }
         GameObject suPlatform = PlatformPool.instance.GetObjectFromSuPlatformPool();
-            if (suPlatform != null)
+        if (suPlatform != null)
             {
                 Vector2 platformVektor = new Vector2();
                 platformVektor.x = Random.Range(platformMinX, platformMaxX);
                 platformVektor.y += Random.Range(playerTransform.position.y, playerTransform.position.y + 5);
                 suPlatform.transform.position = platformVektor;
                 suPlatform.SetActive(true);
+            }
+        GameObject lavaPlatform = PlatformPool.instance.GetObjectFromLavaPlatformPool();
+            if (suPlatform != null)
+            {
+                Vector2 platformVektor = new Vector2();
+                platformVektor.x = Random.Range(platformMinX, platformMaxX);
+                platformVektor.y += Random.Range(playerTransform.position.y, playerTransform.position.y + 5);
+                lavaPlatform.transform.position = platformVektor;
+                lavaPlatform.SetActive(true);
             }
         //BU KODU YAZINCA UNITY PROJEYI ACAMIYOR
         //platformSu.SpawnSuPlatform();       
