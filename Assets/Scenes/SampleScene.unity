@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a60c75488004adda81ebf9d5259859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountPlatforms: 20
+  amountPlatforms: 12
   platformPrefab: {fileID: 868712199}
 --- !u!1 &868712199 stripped
 GameObject:
@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 1717417423}
   - component: {fileID: 1717417422}
   - component: {fileID: 1717417424}
+  - component: {fileID: 1717417425}
   m_Layer: 0
   m_Name: GroundShadow
   m_TagString: Untagged
@@ -1101,6 +1102,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 45.004883, y: 50.2955}
   m_EdgeRadius: 0
+--- !u!114 &1717417425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717417421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f00130dbb042638e68b2fdf6b715c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  ground: {fileID: 1717417421}
+  kameraFarki: 20
 --- !u!1001 &4295725511632327219
 PrefabInstance:
   m_ObjectHideFlags: 0
