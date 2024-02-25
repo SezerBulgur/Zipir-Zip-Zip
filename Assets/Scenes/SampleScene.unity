@@ -676,8 +676,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountPlatforms: 12
   amountSuPlatforms: 20
+  amountLavaPlatforms: 20
   platformPrefab: {fileID: 868712199}
   suPlatformPrefab: {fileID: 8108999159938769985, guid: 3cc9e13d4400746d4943dabb7b2575b0, type: 3}
+  lavaPlatformPrefab: {fileID: 5881779147083747370, guid: 2755b0ef0173947c7873f4fbece9fe96, type: 3}
 --- !u!1 &868712199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3622030331218941235, guid: 233952949a6334d3db0da3f569d61f29, type: 3}

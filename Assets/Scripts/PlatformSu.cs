@@ -54,7 +54,7 @@ public class PlatformSu : Platform
             {
                 collision.gameObject.GetComponent<Karakter>().KarakteriZiplat();
                 gameObject.SetActive(false);
-                SpawnPlatform();
+                //SpawnPlatform();
                 collision.gameObject.GetComponent<Rigidbody2D>().velocity *= slowdownFactor;
 
 

@@ -37,7 +37,7 @@ public class PlatformAtes : Platform
             // "Karakter" etiketine sahip bir objeye �arpmay� b�rakt���nda �al���r
 
             gameObject.SetActive(false);
-            SpawnPlatform();        
+            //SpawnPlatform();        
         }
     }
 

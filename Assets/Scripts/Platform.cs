@@ -16,17 +16,22 @@ public class Platform : MonoBehaviour
     [SerializeField] float platformMinX = -5f;
     [SerializeField] float platformMaxY = 2f;
     [SerializeField] float platformMinY = 1.6f;
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
 
 //BU KODU YAZINCA UNITY PROJEYI ACAMIYOR
     //PlatformSu platformSu = new PlatformSu();
     
     void OnEnable()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Karakter").transform;
+        if (GameObject.FindGameObjectWithTag("Karakter").transform != null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Karakter").transform;
+        }
     }
     void Start()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Karakter").transform;
+
         // for (int i = 0; i < 5; i++)
         // {
         //     SpawnPlatform();
@@ -84,7 +89,7 @@ public class Platform : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Karakter>().KarakteriZiplat();
                 gameObject.SetActive(false);
-                SpawnPlatform();
+                this.SpawnPlatform();
 
 
             }
