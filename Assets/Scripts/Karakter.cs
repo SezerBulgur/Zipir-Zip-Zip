@@ -8,11 +8,13 @@ public class Karakter : MonoBehaviour
     [SerializeField] float ziplamaKuvveti;
 
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,12 +22,21 @@ public class Karakter : MonoBehaviour
     {
         float yatayEksen = Input.GetAxis("Horizontal");
         gameObject.transform.Translate(yatayEksen * hareketHizi * Time.deltaTime, 0, 0);
-        Debug.Log(yatayEksen);
+        if (yatayEksen < 0) {
+            spriteRenderer.flipX = true;
+        } else if (yatayEksen > 0) {
+            spriteRenderer.flipX = false;
+        }
 
     }
 
     public void KarakteriZiplat()
     {
-        rb.AddForce(Vector2.up * ziplamaKuvveti);
+        rb.velocity = new Vector2(rb.velocity.x, ziplamaKuvveti);
+        // rb.AddForce(Vector2.up * ziplamaKuvveti);
+        // if (rb.velocity.y >= 10) 
+        // {
+            
+        // }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //
@@ -11,15 +12,45 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float platformMaxX = 5f;
+    [SerializeField] float platformMinX = -5f;
+    [SerializeField] float platformMaxY = 2f;
+    [SerializeField] float platformMinY = 1.6f;
+    [SerializeField] Transform playerTransform;
+    
+    void OnEnable()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Karakter").transform;
+    }
     void Start()
     {
-        
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     SpawnPlatform();
+        // }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (playerTransform.position.y - 10 > transform.position.y)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+    public void SpawnPlatform() 
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject platform = PlatformPool.instance.GetObjectFromPool();
+            if (platform != null)
+            {
+                Vector2 platformVektor = new Vector2();
+                platformVektor.x = Random.Range(platformMinX, platformMaxX);
+                platformVektor.y += Random.Range(playerTransform.position.y, playerTransform.position.y + 5);
+                platform.transform.position = platformVektor;
+                platform.SetActive(true);
+            }
+        }
         
     }
 
@@ -30,6 +61,10 @@ public class Platform : MonoBehaviour
             if(collision.relativeVelocity.y <= 0f) 
             {
                 collision.gameObject.GetComponent<Karakter>().KarakteriZiplat();
+                gameObject.SetActive(false);
+                SpawnPlatform();
+
+
             }
             //Destroy(this.gameObject);
         }

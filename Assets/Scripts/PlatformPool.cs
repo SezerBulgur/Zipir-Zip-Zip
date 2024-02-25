@@ -6,7 +6,7 @@ public class PlatformPool : MonoBehaviour
 {
     public static PlatformPool instance;
 
-    [SerializeField] private int amountPlatforms = 20;
+    [SerializeField] private int amountPlatforms = 100;
 
     private List<GameObject> pooledPlatforms = new List<GameObject>();
 
@@ -32,13 +32,15 @@ public class PlatformPool : MonoBehaviour
         }
     }
 
+
     public GameObject GetObjectFromPool()
     {
         for (int i = 0; i < pooledPlatforms.Count; i++)
         {
             //buradan cagirilan platform, platform nesnesi icinde spawn tarzi bir metodun icinde kullanilmali
             if (!pooledPlatforms[i].activeInHierarchy) 
-            {
+            {   
+                Debug.Log("deneme");
                 return pooledPlatforms[i];
             }
             
