@@ -18,10 +18,10 @@ public class PlatformAtes : Platform
 
     void OnCollisionExit2D(Collision2D col)
     {
-        // Nesnenin baþka bir nesneye çarpmayý býraktýðý durumu izler
+        // Nesnenin baï¿½ka bir nesneye ï¿½arpmayï¿½ bï¿½raktï¿½ï¿½ï¿½ durumu izler
         if (col.gameObject.CompareTag("Karakter"))
         {
-            // "Karakter" etiketine sahip bir objeye çarpmayý býraktýðýnda çalýþýr
+            // "Karakter" etiketine sahip bir objeye ï¿½arpmayï¿½ bï¿½raktï¿½ï¿½ï¿½nda ï¿½alï¿½ï¿½ï¿½r
 
             Destroy(gameObject);
         }

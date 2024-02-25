@@ -17,6 +17,10 @@ public class Platform : MonoBehaviour
     [SerializeField] float platformMaxY = 2f;
     [SerializeField] float platformMinY = 1.6f;
     [SerializeField] Transform playerTransform;
+    [SerializeField] private GameObject suPlatformPrefab;
+
+//BU KODU YAZINCA UNITY PROJEYI ACAMIYOR
+    //PlatformSu platformSu = new PlatformSu();
     
     void OnEnable()
     {
@@ -41,7 +45,7 @@ public class Platform : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            GameObject platform = PlatformPool.instance.GetObjectFromPool();
+            GameObject platform = PlatformPool.instance.GetObjectFromPlatformPool();
             if (platform != null)
             {
                 Vector2 platformVektor = new Vector2();
@@ -51,14 +55,24 @@ public class Platform : MonoBehaviour
                 platform.SetActive(true);
             }
         }
-        
+        GameObject suPlatform = PlatformPool.instance.GetObjectFromSuPlatformPool();
+            if (suPlatform != null)
+            {
+                Vector2 platformVektor = new Vector2();
+                platformVektor.x = Random.Range(platformMinX, platformMaxX);
+                platformVektor.y += Random.Range(playerTransform.position.y, playerTransform.position.y + 5);
+                suPlatform.transform.position = platformVektor;
+                suPlatform.SetActive(true);
+            }
+        //BU KODU YAZINCA UNITY PROJEYI ACAMIYOR
+        //platformSu.SpawnSuPlatform();       
     }
 
     private void OnCollisionEnter2D(Collision2D collision) //karakter platforma carptigi zaman guc uygulayacak
     {
         if (collision.gameObject.CompareTag("Karakter"))
         {
-            if(collision.relativeVelocity.y <= 0f) 
+            if(collision.relativeVelocity.y <= 0.5f) 
             {
                 collision.gameObject.GetComponent<Karakter>().KarakteriZiplat();
                 gameObject.SetActive(false);
